@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Coche;
 use Illuminate\Http\Request;
 
 class CocheController extends Controller
