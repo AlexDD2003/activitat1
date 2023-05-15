@@ -24,4 +24,6 @@ Route::put('/coche/{id}', [CocheController::class, 'update']);
 Route::delete('/coche/{id}', [CocheController::class, 'destroy']);
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
+Route::post('/register', [AuthController::class, 'register'])->name('api.register');
+
 

@@ -11,9 +11,9 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
 use Laravel\Sanctum\HasApiTokens;
 
+
 class AuthController extends Controller
 {
-    use HasApiTokens;
 
     /**
      * Register a new user.
@@ -81,8 +81,11 @@ class AuthController extends Controller
         return response()->json([
             'message' => 'Successfully logged in.',
             'token' => $token
-        ], 200);
+        ], 200)->authenticated(function () use ($request, $user) {
+            return redirect('/coches');
+        });
     }
+
 
     /**
      * Log the user out (invalidate the token).

@@ -16,7 +16,7 @@ class CocheController extends Controller
     public function show($id)
     {
         $coche = Coche::find($id);
-        if($coche){
+        if ($coche) {
             return response()->json($coche, 200);
         } else {
             return response()->json(['error' => 'Coche no encontrado'], 404);
@@ -37,7 +37,7 @@ class CocheController extends Controller
     public function update(Request $request, $id)
     {
         $coche = Coche::find($id);
-        if($coche){
+        if ($coche) {
             $coche->marca = $request->marca;
             $coche->modelo = $request->modelo;
             $coche->color = $request->color;
@@ -52,11 +52,17 @@ class CocheController extends Controller
     public function destroy($id)
     {
         $coche = Coche::find($id);
-        if($coche){
+        if ($coche) {
             $coche->delete();
             return response()->json(null, 204);
         } else {
             return response()->json(['error' => 'Coche no encontrado'], 404);
         }
+    }
+
+    public function listarCoches()
+    {
+        $coches = Coche::all();
+        return view('coches.index', compact('coches'));
     }
 }
