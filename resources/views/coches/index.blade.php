@@ -1,29 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="{{ asset('css/index.css') }}">
     <title>Listado de Coches</title>
 </head>
 <body>
+@include('layouts.navigation')
     <h1>Listado de Coches</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Marca</th>
-                <th>Modelo</th>
-                <th>Color</th>
-                <th>Precio</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($coches as $coche)
-            <tr>
-                <td>{{ $coche->marca }}</td>
-                <td>{{ $coche->modelo }}</td>
-                <td>{{ $coche->color }}</td>
-                <td>{{ $coche->precio }}</td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
+
+    @foreach($coches as $coche)
+    <div class="coche">
+        <h2>{{ $coche->marca }}</h2>
+        <p>{{ $coche->modelo }}</p>
+        <a href="{{ route('coches.show', $coche->id) }}" class="details-btn">Ver detalles</a>
+    </div>
+    @endforeach
 </body>
 </html>

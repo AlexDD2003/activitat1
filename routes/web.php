@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CocheController;
+use App\Http\Controllers\CocheViewController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,5 +31,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 Route::get('/coches', 'CocheController@listarCoches');
+Route::get('/coches', [CocheViewController::class, 'index'])->name('coches.index');
+Route::get('/coches/{id}', 'CocheViewController@show')->name('coches.show');
+
 
 require __DIR__.'/auth.php';
