@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CocheController;
 use App\Http\Controllers\CocheViewController;
+use App\Http\Controllers\CartController;
+
 
 
 /*
@@ -32,7 +34,14 @@ Route::middleware('auth')->group(function () {
 });
 Route::get('/coches', 'CocheController@listarCoches');
 Route::get('/coches', [CocheViewController::class, 'index'])->name('coches.index');
-Route::get('/coches/{id}', 'CocheViewController@show')->name('coches.show');
+Route::get('/coches/{id}', [CocheViewController::class, 'show'])->name('coches.show');
+Route::get('/carrito', [CartController::class, 'show'])->name('cart.show');
+Route::get('/cart/add/{coche}', [CartController::class, 'add'])->name('cart.add');
+Route::delete('/cart/remove/{coche}', [CartController::class, 'remove'])->name('cart.remove');
+
+
+
+
 
 
 require __DIR__.'/auth.php';
