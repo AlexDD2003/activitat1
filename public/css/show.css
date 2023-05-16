@@ -34,14 +34,3 @@ body{
 .car-details .btn-comprar:hover {
     background-color: #0056b3;
 }
-
-.btbuy{
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: #007bff;
-    color: #fff;
-    font-size: 1.2rem;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.2s ease-in-out;
-}

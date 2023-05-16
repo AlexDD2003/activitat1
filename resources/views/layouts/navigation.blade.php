@@ -13,7 +13,7 @@
                             @csrf
 
                             <x-dropdown-link :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();">
-                                {{ __('Cerrar sesión') }}
+                                {{ __('Log Out') }}
                             </x-dropdown-link>
 </form>
                 </div>

@@ -19,7 +19,7 @@
                 <p>{{ $coche['color'] }}</p>
                 <p>{{ $coche['precio'] }}</p>
 
-                <a class="btbuy" href="{{ route('cart.add', ['coche' => $coche['id']]) }}">Comprar</a>
+                <a href="{{ route('cart.add', ['coche' => $coche['id']]) }}">Comprar</a>
 
 
 
