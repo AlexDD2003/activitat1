@@ -1,8 +1,10 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Models\Coche;
+use App\Models\Pedido;
 use Illuminate\Http\Request;
-use App\Models\Coche; 
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
@@ -42,6 +44,25 @@ public function remove(Request $request, Coche $coche)
     return redirect()->route('cart.show');
 }
 
+public function store(Request $request)
+{
+    $cart = $request->session()->get('cart', []);
+    $cartTotal = 0;
 
+    foreach ($cart as $coche) {
+        $cartTotal += $coche->precio;
+    }
+
+    dd(Auth::user());
+    $pedido = Pedido::create([
+        'user_id' => Auth::user()->id,
+        'order' => $coche->name,
+        'total' => $cartTotal,
+    ]);
+
+    $request->session()->forget('cart');
+
+    return redirect()->route('pedidos.index');
+}
 
 }

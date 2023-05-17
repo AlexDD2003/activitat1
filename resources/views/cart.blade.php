@@ -29,7 +29,11 @@
 
             <div class="cart-total">
                 <p>Total: {{ $cartTotal }}€</p>
-                <button id="btcomprar" type="submit">Comprar</button>
+                <form action="{{ route('pedidos.store') }}" method="POST">
+                    @csrf
+                    @method('post')
+                    <button id="btcomprar" type="submit">Comprar</button>
+                </form>
             </div>
         @endif
     </div>
