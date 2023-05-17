@@ -18,7 +18,7 @@
                     <p class="cart-item-title">Marca:{{ $coche->marca }}</p>
                     <p class="cart-item-title">Modelo:{{ $coche->modelo }}</p>
                     <p class="cart-item-title">Color:{{ $coche->color }}</p>
-                    <p class="cart-item-title">Precio:{{ $coche->precio }}</p>
+                    <p class="cart-item-title">Precio:{{ $coche->precio }}€</p>
                     <form action="{{ route('cart.remove', ['coche' => $coche->id]) }}" method="POST">
                         @csrf
                         @method('DELETE')
