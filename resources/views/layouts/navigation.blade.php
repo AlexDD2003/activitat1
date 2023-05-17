@@ -8,7 +8,7 @@
                 <div id="caja" class="hidden md:block">
                     <a href="{{ route('coches.index') }}" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Inicio</a>
                     <a href="{{ route('cart.show') }}" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Carrito</a>
-                    <a href="{{ route('pedidos.index') }}" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Mis Pedidos</a>
+                    <a href="" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Mis Pedidos</a>
                     <form method="POST" action="{{ route('logout') }}">
                             @csrf
 

@@ -1,11 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CartController;
-use App\Http\Controllers\CocheController;
-use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CocheController;
 use App\Http\Controllers\CocheViewController;
+use App\Http\Controllers\CartController;
 
 
 
@@ -40,8 +39,8 @@ Route::get('/carrito', [CartController::class, 'show'])->name('cart.show');
 Route::get('/cart/add/{coche}', [CartController::class, 'add'])->name('cart.add');
 Route::delete('/cart/remove/{coche}', [CartController::class, 'remove'])->name('cart.remove');
 
-Route::get('/pedidos', [PedidoController::class, 'index'])->name('pedidos.index');
-Route::post('/pedidos/store', [CartController::class, 'store'])->name('pedidos.store');
+
+
 
 
 
