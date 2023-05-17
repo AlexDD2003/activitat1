@@ -34,3 +34,16 @@ body{
 .car-details .btn-comprar:hover {
     background-color: #0056b3;
 }
+
+#btcomprar {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #337ab7;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+#btcomprar:hover {
+    background-color: #286090;
+}

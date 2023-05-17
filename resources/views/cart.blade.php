@@ -15,10 +15,10 @@
         @else
             @foreach ($coches as $coche)
                 <div class="cart-item">
-                    <p class="cart-item-title">{{ $coche->marca }}</p>
-                    <p class="cart-item-title">{{ $coche->modelo }}</p>
-                    <p class="cart-item-title">{{ $coche->color }}</p>
-                    <p class="cart-item-title">{{ $coche->precio }}</p>
+                    <p class="cart-item-title">Marca:{{ $coche->marca }}</p>
+                    <p class="cart-item-title">Modelo:{{ $coche->modelo }}</p>
+                    <p class="cart-item-title">Color:{{ $coche->color }}</p>
+                    <p class="cart-item-title">Precio:{{ $coche->precio }}</p>
                     <form action="{{ route('cart.remove', ['coche' => $coche->id]) }}" method="POST">
                         @csrf
                         @method('DELETE')
@@ -28,7 +28,8 @@
             @endforeach
 
             <div class="cart-total">
-                <p>Total: ${{ $cartTotal }}</p>
+                <p>Total: {{ $cartTotal }}€</p>
+                <button id="btcomprar" type="submit">Comprar</button>
             </div>
         @endif
     </div>
