@@ -43,8 +43,6 @@ class AuthController extends Controller
 
         $token = $user->createToken('MyAppToken')->plainTextToken;
 
-        return redirect()->route('login');
-
         return response()->json([
             'message' => 'Successfully registered.',
             'token' => $token,
@@ -79,8 +77,6 @@ class AuthController extends Controller
 
         $user = $request->user();
         $token = $user->createToken('MyAppToken')->plainTextToken;
-
-        return redirect()->route('coches.index');
 
         return response()->json([
             'message' => 'Successfully logged in.',
