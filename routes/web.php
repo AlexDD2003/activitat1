@@ -44,6 +44,8 @@ Route::get('/coches/{id}', [CocheViewController::class, 'show'])->name('coches.s
 Route::middleware(['auth'])->get('/carrito', [CartController::class, 'show'])->name('cart.show');
 Route::get('/cart/add/{coche}', [CartController::class, 'add'])->name('cart.add');
 Route::delete('/cart/remove/{coche}', [CartController::class, 'remove'])->name('cart.remove');
+Route::middleware(['auth'])->post('/cart/clean', [CocheViewController::class, 'clean'])->name('cart.clean');
+
 
 
 

@@ -38,6 +38,13 @@ class CocheViewController extends Controller
         }
     }
 }
+
+public function clean()
+{
+    session()->forget('cart');
+
+    return redirect()->route('cart.show');
+}
 }
 
 
